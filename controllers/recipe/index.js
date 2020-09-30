@@ -2,8 +2,9 @@
 // DEPENDENCIES
 /////////////////////////////////
 const { Router } = require("express");
+const auth = require("../authmiddleware");
 const bcrypt = require("bcryptjs");
-const User = require("../../models/auth");
+const Recipe = require("../../models/recipe");
 
 ///////////////////////////////////////
 // CREATE ROUTER
@@ -13,6 +14,30 @@ const router = Router();
 ///////////////////////////////////////
 // ROUTES
 ///////////////////////////////////////
+
+//INDEX//
+router.get("/", auth, async (req, res) => {
+  try {
+    const recipes = await Recipe.find({username: req.session.username}) 
+    res.render("../views/recipes/index.jsx", {recipes});
+  } catch (error) {
+    console.log(error)
+  }
+});
+//NEW//
+router.get("/new", auth, async (req, res) => {
+  res.render("../views/recipes/signup.jsx")
+})
+//DELETE//
+//UPDATE//
+//CREATE//
+router.post("/", auth, async (req, res) => {
+  req.body.username = req.session.username
+  const newRecipe = await Recipe.create(req.body)
+  res.redirect("/recipes/")
+})
+//EDIT//
+//SHOW//
 
 // SIGNUP PAGE
 router.get("/signup", (req, res) => {
@@ -51,7 +76,7 @@ router.post("/login", async (req, res) => {
       //SAVE INFO IN SESSION THAT USER IS LOGGEDIN AND USERNAME
       req.session.login = true;
       req.session.username = user[0].username;
-      res.redirect("/recipe/");
+      res.redirect("/recipes/");
     } else {
       // Redirect to login page if failed
       res.render("auth/fail.jsx");
