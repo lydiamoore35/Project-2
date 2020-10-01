@@ -18,7 +18,8 @@ const router = Router();
 //INDEX//
 router.get("/", auth, async (req, res) => {
   try {
-    const recipes = await Recipe.find({username: req.session.username}) 
+    const recipes = await Recipe.find({username: req.session.username})
+      console.log( await recipes) 
     res.render("../views/recipes/index.jsx", {recipes});
   } catch (error) {
     console.log(error)
@@ -26,17 +27,30 @@ router.get("/", auth, async (req, res) => {
 });
 //NEW//
 router.get("/new", auth, async (req, res) => {
-  res.render("../views/recipes/signup.jsx")
+  res.render("../views/recipes/new.jsx")
 })
 //DELETE//
+router.delete("/:id", auth, async (req, res) => {
+  await Recipe.findByIdAndDelete(req.params.id);
+  res.redirect("/recipe/");
+})
 //UPDATE//
+router.put("/edit/:id", auth, async (req, res) => {
+  req.body.username = req.session.username
+  await Recipe.findByIdAndUpdate(req.params.id, req.body)
+  res.redirect("/recipe/")
+})
 //CREATE//
 router.post("/", auth, async (req, res) => {
   req.body.username = req.session.username
   const newRecipe = await Recipe.create(req.body)
-  res.redirect("/recipes/")
+  res.redirect("/recipe/")
 })
 //EDIT//
+router.get("/edit/:id", auth, async (req, res) => {
+  const recipe = await Recipe.findById(req.params.id)
+  res.render("recipes/edit.jsx", {recipe}) 
+})
 //SHOW//
 
 // SIGNUP PAGE

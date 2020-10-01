@@ -3,7 +3,7 @@ const Layout = require("../layout.jsx");
 
 class Index extends React.Component {
   render() {
-    const {recipes} = this.props
+    // const {recipes} = this.props
     return (
       <Layout title="Add New Recipe">
         <form action="/recipe/" method="post">
