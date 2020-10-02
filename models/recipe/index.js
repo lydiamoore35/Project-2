@@ -13,7 +13,7 @@ const recipeSchema = new Schema ({
   img:{type: String},
   description: {type: String},
   time: {type: String},
-  servings: {type: Number}
+  servings: {type: String}
 });
 
 ////////////////////////////////////
