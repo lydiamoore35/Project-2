@@ -52,6 +52,10 @@ router.get("/edit/:id", auth, async (req, res) => {
   res.render("recipes/edit.jsx", {recipe}) 
 })
 //SHOW//
+router.get("/show/:id", auth, async (req, res) => {
+  const recipe = await Recipe.findById(req.params.id)
+  res.render("recipes/show.jsx", {recipe}) 
+})
 
 // SIGNUP PAGE
 router.get("/signup", (req, res) => {

@@ -10,9 +10,9 @@ class Layout extends React.Component {
           <link rel="stylesheet" href="/css/style.css"/>
           <script src="/js/app.js"></script>
         </head>
-        <body>
+        <body className=".container">
           <header>
-            <h1>Kids Cook</h1>
+            <h1>Create Your Cookbook</h1>
               <nav><span><a href="/auth/signup">Sign Up</a></span>
               <span><a href="/auth/login">Log In</a></span>
               <span><a href="/auth/logout">Log Out</a></span>
@@ -20,7 +20,7 @@ class Layout extends React.Component {
           </header>
           <main>{this.props.children}</main>
           <footer>
-            <h5>Kids Cook created by Lydia Moore</h5>
+            <h5>Create Your Cookbook created by Lydia Moore</h5>
           </footer>
         </body>
       </html>

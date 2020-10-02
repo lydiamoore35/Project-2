@@ -5,7 +5,7 @@ class Index extends React.Component {
   render() {
     return (
       <Layout title="Kids Cook">
-        <h1> {this.props.hello} </h1>
+        <h2>Recipe of the Day</h2>
       </Layout>
     );
   }
