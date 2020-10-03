@@ -6,7 +6,7 @@ class Index extends React.Component {
     const {recipes} = this.props
     return (
       <Layout title="My Recipes">
-        <h3> My Recipes </h3>
+        <h3 className="myRecipes"> My Recipes </h3>
         <a href="/recipe/new">
           <button>New Recipe</button></a>
         {recipes.map((recipe) => {

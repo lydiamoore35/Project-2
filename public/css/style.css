@@ -10,13 +10,14 @@ footer {
     text-align: center;
     color: white;
     background-color: black;
-    opacity: 65%;
+    opacity: 70%;
     align-items: center;
     margin-top: 2%;
     padding: 2% 0 0 0; 
 }
 main {
     color: white;
+    margin-top: 2%;
 }
 h1 {
     background-color: rgb(156, 33, 11);
@@ -44,7 +45,7 @@ nav {
     background-color: black;
     color: white;
     padding: 1%;
-    opacity: 65%;
+    opacity: 70%;
 }
 span {
     display: flex;
@@ -54,14 +55,26 @@ span {
 a {
     color: white;
 }
+.myRecipes, .failedLogin {
+    color: black;
+    font-weight: 900;
+}
 .loginField, .signupField {
     margin: 1.5%;
     padding: 3% 3% .5% 3%;
-    opacity: 65%;
+    opacity: 90%;
     align-content: center;
     color: white;
 }
-.button, button, input[type='button'], input[type='reset'], input[type='submit'], input[type='password'], input[type='color'], input[type='text'], select {
+input[type='reset'], input[type='password'], input[type='color'], input[type='text'], select {
+    background-color:white;
+    border: none;
+    color: black;
+    width: 38%;
+    display: flex;
+    opacity: 65%;
+}
+.button, button,input[type='button'], input[type='submit'] {
     background-color:white;
     border: none;
     color: black;
