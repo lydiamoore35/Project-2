@@ -6,18 +6,17 @@ class Index extends React.Component {
     const {recipes} = this.props
     return (
       <Layout title="My Recipes">
-        <h1> My Recipes </h1>
+        <h3> My Recipes </h3>
         <a href="/recipe/new">
           <button>New Recipe</button></a>
         {recipes.map((recipe) => {
           return (
-            <div>
-              <h3>{recipe.username}</h3>
-              <h3>{recipe.category}</h3>
-              <img src={`${recipe.img}`} alt="food" width="120"></img>
-              <h3>{recipe.descirption}</h3>
-              <h3>{recipe.time}</h3>
-              <h3>{recipe.servings} servings</h3>
+            <div className="displayRecipes">
+              <h3>{recipe.recipe}</h3>
+              <img src={`${recipe.img}`} alt="food" width="250"></img>
+              <h4>{recipe.description}</h4>
+              <h4>{recipe.time}</h4>
+              <h4>{recipe.servings} servings</h4>
 
               <form action={`/recipe/${recipe._id}?_method=DELETE`} method="POST">
                 <input type="submit" value="delete"/>

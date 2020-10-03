@@ -9,6 +9,7 @@ const { Schema, model } = require("mongoose");
 
 const recipeSchema = new Schema ({
   username: {type: String, required: true},
+  recipe: {type: String},
   category: {type: String, required: true},
   img:{type: String},
   description: {type: String},

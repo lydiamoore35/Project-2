@@ -18,13 +18,23 @@ footer {
 main {
     color: white;
 }
-h1, h3 {
+h1 {
     background-color: rgb(156, 33, 11);
     color: white;
     padding: 2%;
     font-family: 'Spectral SC', serif;
+    text-align: center; 
+}
+h2, h3 {
+    font-weight: 900;
+    padding: 2%;
+    font-family: 'Spectral SC', serif;
+    text-align: center;
 }
 h2 {
+    text-align: center;
+}
+.displayRecipes {
     text-align: center;
 }
 header {
@@ -47,13 +57,15 @@ a {
 .loginField, .signupField {
     margin: 1.5%;
     padding: 3% 3% .5% 3%;
-    background-color: black;
     opacity: 65%;
-    color: white;
     align-content: center;
+    color: white;
 }
-.button, button, input[type='button'], input[type='reset'], input[type='submit'], input[type='password'], input[type='color'] {
+.button, button, input[type='button'], input[type='reset'], input[type='submit'], input[type='password'], input[type='color'], input[type='text'], select {
     background-color:white;
-    border-color: black;
+    border: none;
     color: black;
 }
+/* button:hover, .button:hover, .submit:hover {
+    background-color: rgb(26, 131, 201);
+} */

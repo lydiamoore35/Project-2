@@ -56,6 +56,11 @@ router.get("/show/:id", auth, async (req, res) => {
   const recipe = await Recipe.findById(req.params.id)
   res.render("recipes/show.jsx", {recipe}) 
 })
+//RECIPES SHOW//
+router.get("/recipes/:id", auth, async (req, res) => {
+  const recipe = await Recipe.findById(req.params.id)
+  res.render("recipes/recipes.jsx", {recipe}) 
+})
 
 // SIGNUP PAGE
 router.get("/signup", (req, res) => {

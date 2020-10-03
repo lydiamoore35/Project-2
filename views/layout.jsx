@@ -20,7 +20,7 @@ class Layout extends React.Component {
                 <span><a href="/auth/signup"> | Sign Up | </a></span>
                 <span><a href="/auth/login"> | Log In |</a></span>
                 <span><a href="/auth/logout"> | Log Out | </a></span>
-                <span><a href="/auth/signup"> | Recipes | </a></span>
+                <span><a href="/"> | Recipes | </a></span>
               </nav>
           </header>
           <main>{this.props.children}</main>

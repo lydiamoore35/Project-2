@@ -12,6 +12,7 @@ const { PORT, SECRET } = process.env;
 // Bringing in Express
 const express = require("express");
 const app = express();
+const Recipe = require("./models/recipe");
 
 // IMPORT DATABASE CONNECTIONS
 const mongoose = require("./db/dbconn");
@@ -58,7 +59,9 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 app.get("/", (req, res) => {
-  res.render("index.jsx", { hello: "Hello World" });
+  Recipe.find({}, (error, recipes) => {
+  res.render("index.jsx", {recipes});
+});
 });
 
 app.use("/auth", authRouter);
